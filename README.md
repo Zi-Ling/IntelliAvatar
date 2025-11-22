@@ -1,168 +1,154 @@
-# IntelliAvatar
-IntelliAvatar — A modular cognitive OS for creating autonomous digital humans.
+🌟 IntelliAvatar — AI Worker OS (Early Architecture Preview)
 
+A local-first, modular AI Worker OS designed to operate a computer like a human.
 
-### **1. Intent**
-Parses natural language instructions into structured task specifications.
+🧠 Overview
 
-### **2. Perception**
-Extracts environmental states:
-- Desktop UI elements  
-- Screen images  
-- Terminal output  
-- File system structure  
+IntelliAvatar is an experimental AI Worker OS focused on performing real-world computer tasks through human-like interaction:
 
-### **3. Memory**
-Stores episodic experiences into structured, retrievable long-term memory.
+See the screen
 
-Memory will eventually enable:
-- Skill extraction  
-- Self-improvement  
-- Behavioral refinement  
+Understand the user’s intent
 
-### **4. Planner**
-Generates multi-step plans from:
-- User goals  
-- Perceived state  
-- Retrieved memories  
-- Available skills  
+Plan multi-step tasks
 
-This module decides **what to do next**.
+Click / type / operate applications
 
-### **5. Skills**
-Reusable mid-level abilities built from primitive actions.
+Automate repeatable workflows
 
-Skills evolve over time and follow a three-phase capability roadmap:
+Run locally for privacy and reliability
 
-#### **Early Stage (Current)**
-Foundational automation abilities such as:
-- Navigating interfaces  
-- Extracting on-screen information  
-- Handling browser and system-level automation  
-- Parsing files, logs, and environment states  
+The project aims to create a general-purpose AI system capable of handling everyday digital work, from file operations to app automation, using a stable, extensible architecture.
 
-These skills allow the avatar to perform basic operational tasks.
+⚠️ Note: This repository currently contains documentation only.
+Implementation is under active development and is not open-sourced at this stage.
 
-#### **Mid Stage (Planned)**
-More advanced, context-aware skills, including:
-- Operating complex software through perception + planning  
-- Multi-step tool use  
-- Automated troubleshooting for common system/operational tasks  
-- Identifying issues based on logs, UI responses, and historical memory  
+🔍 Vision
 
-Skills become more robust, reliable, and environment-adaptive.
+In the future, software won’t be “opened and used” —
+it will be executed by AI workers who operate computers the same way humans do.
 
-#### **Long Term (Vision)**
-Self-enhancing cognitive abilities:
-- Learning new skills from successful episodes  
-- Refining existing behaviors through trial-and-improvement  
-- Generalizing workflows across different applications  
-- Moving toward a continuously evolving digital human  
+IntelliAvatar aims to explore that direction by building:
 
-Skills eventually form the avatar’s long-term “experience backbone.”
+A local-first agent runtime
 
-### **6. Actions**
-Primitive atomic operations such as:
-- `click(x, y)`  
-- `type(text)`  
-- `run_command(cmd)`  
-- `scroll(direction)`  
-- `wait(seconds)`  
+A modular Worker OS architecture
 
-These are the “motor neurons” of the avatar.
+A stable system for planning, tool execution, and environment feedback
 
-### **7. Learning (WIP)**
-Converts past episodes into new skills.  
-Long-term goal: **self-improving digital human**.
+Skills that teach the AI how to interact with the operating system
 
----
+🏗 Architecture (High-Level)
 
-## 🎬 Demo (Coming Soon)
+IntelliAvatar currently consists of several key conceptual modules:
 
-Upcoming demonstrations will include:
+/avatar
+    ├─ intent/        
+    ├─ perception/    
+    ├─ planner/           
+    ├─ skills/       
+    ├─ memory/           
 
-- Understanding high-level user goals  
-- Generating plans  
-- Operating real desktop applications  
-- Recording memory episodes  
-- Using memory to improve future actions  
+Core Principles
 
-The earliest demo will show a full pipeline:
-1. User gives natural language instruction  
-2. Intent → Task spec  
-3. Planner generates steps  
-4. Avatar operates browser/app  
-5. Memory stores experience  
+Local-first: All reasoning and execution runs locally.
 
----
+Deterministic execution: Real environment feedback determines success, not model assumptions.
 
-## 📅 Weekly Progress Log
+Modular and extensible: Skills, planners, perception modules can evolve independently.
 
-### **Week 1 — Project Initialization**
-- Repository created  
-- Seven cognitive modules defined  
-- Initial pipeline: Intent → Planner → Actions  
-- Memory format under design  
+Human-mode operation: Designed to operate the OS as a human would (click, type, read screen).
 
-_(More weekly updates will be added as development progresses.)_
+⚙️ Current Focus
 
----
+The active development stage is centered on:
 
-## 🗺️ Roadmap
+✔ Stability
 
-### **Phase 1 — Foundation **
-- Implement stable cognitive pipeline  
-- Define Memory episode schema  
-- Add UI perception (OCR + structural state)  
-- Build primitive Actions (desktop + terminal)  
-- Demo: automatic browser task
+Reliable tool execution
 
-### **Phase 2 — Intelligence Layer **
-- Develop Planner v2 with memory retrieval  
-- Prototype skill learning from episodes  
-- Introduce multi-application actions  
-- Demo: operate a real desktop app (Photoshop / CAD)
+Post-execution validation
 
-### **Phase 3 — Digital Human Emergence **
-- Autonomous task refinement  
-- Skill generalization  
-- Self-improvement loops  
-- Long-horizon task execution  
-- Demo: avatar completing a complex workflow end-to-end
+Preventing model hallucinations
 
----
+Runtime as the single source of truth
 
-## 🏛️ Project Philosophy
+✔ Minimal, robust demo
 
-IntelliAvatar is designed around three core beliefs:
+A small but fully stable local demo is under construction, showcasing:
 
-### **1. An avatar should grow through experience.**
-Not static rules. Not fixed scripts.
+Natural language → task
 
-### **2. Desktop environments are the “real world” for digital humans.**
-The avatar should operate:
-- Apps  
-- Terminals  
-- Browsers  
-- Files  
-- UI elements  
+Task → plan
 
-Just like humans do.
+Plan → real system actions
 
-### **3. The architecture matters more than the features.**
-A strong cognitive OS → infinite future abilities.
+Verified execution with logs
 
----
+🛣 Roadmap
+0.1 — Foundation (In progress)
 
-## 🤝 Contribution
+Task / Step runtime
 
-The project is in **early research**.  
-Discussions, ideas, architecture suggestions, and conceptual PRs are welcome.
+Skill execution system
 
-For collaboration or inquiries, feel free to open an issue.
+File operations (list, write, move)
 
----
+Basic planner structure
 
-## 📄 License
-To be added — currently private research, not open-sourced yet.
+Execution validation layer
 
+0.2 — Mini Demo
+
+“Create a file from natural language” demo
+
+“List directory → save to report” demo
+
+Simple visualization of execution traces
+
+0.3 — Human Interaction Layer
+
+Mouse / keyboard automation
+
+Basic screen perception
+
+Application control
+
+0.4 — Autonomous Worker Loop
+
+Goal persistence
+
+Multi-step reasoning
+
+Error recovery
+
+0.5 — Advanced Abilities
+
+Workflow templates
+
+Self-improving skills
+
+Complex desktop automation
+
+Cross-application flows (e.g., browser + Office apps)
+
+🎥 Demos
+
+Demos will be shared soon here and on
+X: https://x.com/IntelliAvatar
+
+🗝 License
+
+Source code is currently not open-sourced.
+Documentation is available for public reference.
+Full or partial code release is under evaluation.
+
+📩 Contact
+
+To follow progress or join early updates:
+
+X: https://x.com/IntelliAvatar
+
+Website: https://intelliavatar.framer.ai
+
+Early access waitlist: (link to be added)
